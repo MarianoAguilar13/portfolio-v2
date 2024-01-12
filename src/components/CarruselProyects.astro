@@ -132,8 +132,6 @@ function main() {
   siguiente?.addEventListener("click", (e) => {
     e.preventDefault();
 
-    console.log("me hizo click el siguiente");
-
     index++;
 
     if (index >= arrayProjects.length) {
@@ -146,8 +144,6 @@ function main() {
 
   anterior?.addEventListener("click", (e) => {
     e.preventDefault();
-
-    console.log("me hizo click el anterior");
 
     index--;
 
@@ -162,7 +158,7 @@ function main() {
 
 function recorrerArray(arrayProjects: any, index:number) {
   arrayProjects.forEach((project:any, indice:number) => {
-    console.log("el num del array", indice);
+
     if (indice == index) {
       project.style.display = "flex";
     } else {
