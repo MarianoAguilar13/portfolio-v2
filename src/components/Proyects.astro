@@ -1,0 +1,156 @@
+---
+
+const {urlVideo,linkToPage,title,description} = Astro.props
+---
+
+<div class="card-project__container">
+    <div class="card-project__container__img-link-container">
+      <iframe
+        class="card-project__container__img-link-container__img video-frame"
+        src={urlVideo}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      >
+      </iframe>
+      <a
+        class="card-project__container__img-link-container__link"
+        href={linkToPage}
+        target="_blank"
+        rel="noopener noreferrer"
+        >Link de la página</a
+      >
+    </div>
+    <div class="card-project__container__info-title-container">
+      <h4
+        class="card-project__container__info-title-container__title"
+      >
+        {title}
+      </h4>
+      <p class="card-project__container__info-title-container__info">
+      {description}
+      </p>
+    </div>
+</div>
+
+
+<style>
+.card-project__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gris);
+  border-radius: 20px;
+  transition-delay: all 1s;
+}
+
+@media (max-width: 768px) {
+  .card-project__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.card-project__container__img-link-container {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+@media (max-width: 768px) {
+  .card-project__container__img-link-container {
+    height: 50%;
+    width: 100%;
+  }
+}
+
+.card-project__container__img-link-container__img {
+  height: 80%;
+  border-radius: 15px;
+  margin: 20px 0px 10px 10px;
+  width: 90%;
+}
+
+@media (max-width: 768px) {
+  .card-project__container__img-link-container__img {
+    height: 85%;
+    border-radius: 15px;
+    margin: 20px 0px 10px 0px;
+    width: 90%;
+  }
+}
+
+.card-project__container__img-link-container__link {
+  margin: auto;
+  font-size: 24px;
+  color: var(--celesteClaro);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .card-project__container__img-link-container__link {
+    margin: auto;
+    font-size: 18px;
+    color: var(--celesteClaro);
+    font-weight: bold;
+  }
+}
+
+.card-project__container__info-title-container {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .card-project__container__info-title-container {
+    height: 50%;
+    width: 100%;
+  }
+}
+
+.card-project__container__info-title-container__title {
+  font-size: 24px;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .card-project__container__info-title-container__title {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+.card-project__container__info-title-container__info {
+  font-size: 18px;
+  color: whitesmoke;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .card-project__container__info-title-container__info {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+</style>

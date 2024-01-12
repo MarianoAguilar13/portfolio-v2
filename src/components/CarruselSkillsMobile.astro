@@ -1,0 +1,169 @@
+---
+import SkillsMobile from "./SkillsMobile.astro"
+---
+
+
+
+<div class="skills__container-mobile">
+    <h2 class="skills__container__title-mobile">Habilidades</h2>
+    <div class="skills__container__flechitas-skills-mobile">
+    <img
+        class="skills__container__anterior-skills-mobile"
+        src="/proximo.png"
+        alt="siguiente"
+    />
+    <div class="skills__container__carrucel-mobile">
+        <SkillsMobile title="Html" 
+        description="Con mis conocimientos en HTML, puedo estructurar el contenido de las páginas y app web, como se observa en mis proyectos del portfolio, que junto a CSS y JS, llenan de funcionalidad y dan vida a estos proyectos." 
+        img="html-5.png" ></SkillsMobile>
+        <SkillsMobile title="Css" 
+        description="Con mis conocimientos actuales en CSS puedo replicar los diseños que me propongan y crear estilos muy variados, esto me permite que el diseño sea del agrado del cliente y los usuarios." 
+        img="/css-3.png" ></SkillsMobile>
+        <SkillsMobile title="JavaScript" 
+        description= 'Tengo conocimientos sobre JavaScript, el cual me permiten crear web-apps y páginas web dinámicas.'
+        img="/js.png" ></SkillsMobile>
+        <SkillsMobile title="TypeScript" 
+        description="Manejo del superset de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases, añadiendo un mayor control dotándolo de un typado fuerte para prevenir errores." 
+        img="/typescript.png" ></SkillsMobile>
+        <SkillsMobile title="React" 
+        description= 'Tengo conocimientos en React, el cual es una librería que me permite crear componentes para reutilizarlos en toda la app, el cual mejora mucho el rendimiento de las web-apps, una de las librerías mas utilizadas en la actualidad.'
+        img="/physics.png" ></SkillsMobile>
+        <SkillsMobile title="Node.js" 
+        description="Con la tecnología Node.js, puedo crear el backend de las app-web y páginas webs dinámica, utilizando express, sql y la estructura de REST-API." 
+        img="/nodejs.png" ></SkillsMobile>
+        <SkillsMobile title="postgre.png" 
+        description= 'Conocimientos sobre SQL, en especial en Postgre, creación de bases de datos y consultas de SQL, también manejo de ORM como sequelize, abierto a aprender otros motores de BD y ORMS.'
+        img="/postgre.png" ></SkillsMobile>
+        <SkillsMobile title="Next.js" 
+        description="Next.js es un potente framework web que se ha convertido en una elección popular entre los desarrolladores web para crear aplicaciones web modernas y eficientes gracias a su versatilidad." 
+        img="/nextjs.svg" ></SkillsMobile>
+    </div>
+    <img
+        class="skills__container__siguiente-skills-mobile"
+        src="/proximo.png"
+        alt="siguiente"
+    />
+    </div>
+</div>
+
+
+<style>
+
+@media (min-width: 960px) {
+  .skills__container-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+.skills__container-mobile {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--celesteClaro);
+}
+}
+
+.skills__container__title-mobile {
+  color: #0b0c10;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.skills__container__flechitas-skills-mobile {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills__container__anterior-skills-mobile {
+  height: 20px;
+  transform: rotate(180deg);
+  margin-left: 10px;
+}
+
+.skills__container__siguiente-skills-mobile {
+  height: 20px;
+  padding-right: 10px;
+}
+
+.skills__container__carrucel-mobile {
+  overflow: hidden;
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+
+</style>
+
+
+<script>
+   function skills() {
+  let arraySkills = Array.from(document.querySelectorAll(".card-skill-mobile"));
+
+  console.log(arraySkills);
+
+  let index = 0;
+  recorrerArray(arraySkills, index);
+
+  const anterior = document.querySelector(
+    ".skills__container__anterior-skills-mobile"
+  );
+  const siguiente = document.querySelector(
+    ".skills__container__siguiente-skills-mobile"
+  );
+
+  siguiente?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    index++;
+
+    if (index >= arraySkills.length) {
+      index = 0;
+      recorrerArray(arraySkills, index);
+    } else {
+      recorrerArray(arraySkills, index);
+    }
+  });
+
+  anterior?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    index--;
+
+    if (index < 0) {
+      index = arraySkills.length - 1;
+      recorrerArray(arraySkills, index);
+    } else {
+      recorrerArray(arraySkills, index);
+    }
+  });
+}
+
+function recorrerArray(arraySkills:any, index:number) {
+  arraySkills.forEach((skill:any, indice:number) => {
+    if (indice == index) {
+      skill.style.display = "flex";
+    } else {
+      skill.style.display = "none";
+    }
+  });
+}
+
+skills();
+ 
+</script>

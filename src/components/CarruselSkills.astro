@@ -1,0 +1,155 @@
+---
+import Skills from "./Skills.astro";
+
+---
+
+<div class="skills__container__flechitas-skills">
+    <img
+      class="skills__container__anterior-skills"
+      src="/proximo.png"
+      alt="siguiente"
+    />
+    <div class="skills__container__carrucel">
+        <div class="skills__container__two-cards">
+            <Skills title="Html" 
+            description="Con mis conocimientos en HTML, puedo estructurar el contenido de las páginas y app web, como se observa en mis proyectos del portfolio, que junto a CSS y JS, llenan de funcionalidad y dan vida a estos proyectos." 
+            img="/html-5.png"></Skills>
+            <Skills title="Css" 
+            description="Con mis conocimientos actuales en CSS puedo replicar los diseños que me propongan y crear estilos muy variados, esto me permite que el diseño sea del agrado del cliente y los usuarios." 
+            img="/css-3.png"></Skills>
+        </div>  
+        <div class="skills__container__two-cards">
+            <Skills title="JavaScript" 
+            description= 'Tengo conocimientos sobre JavaScript, el cual me permiten crear web-apps y páginas web dinámicas.'
+            img="/js.png"></Skills>
+            <Skills title="TypeScript" 
+            description="Manejo del superset de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases, añadiendo un mayor control dotándolo de un typado fuerte para prevenir errores." 
+            img="/typescript.png"></Skills>
+        </div>
+        <div class="skills__container__two-cards">
+          <Skills title="React" 
+          description= 'Tengo conocimientos en React, el cual es una librería que me permite crear componentes para reutilizarlos en toda la app, el cual mejora mucho el rendimiento de las web-apps, una de las librerías mas utilizadas en la actualidad.'
+          img="/physics.png"></Skills>
+          <Skills title="Node.js" 
+          description="Con la tecnología Node.js, puedo crear el backend de las app-web y páginas webs dinámica, utilizando express, sql y la estructura de REST-API." 
+          img="/nodejs.png"></Skills>
+        </div>
+        <div class="skills__container__two-cards">
+          <Skills title="postgre.png" 
+          description= 'Conocimientos sobre SQL, en especial en Postgre, creación de bases de datos y consultas de SQL, también manejo de ORM como sequelize, abierto a aprender otros motores de BD y ORMS.'
+          img="/postgre.png"></Skills>
+          <Skills title="Next.js" 
+          description="Next.js es un potente framework web que se ha convertido en una elección popular entre los desarrolladores web para crear aplicaciones web modernas y eficientes gracias a su versatilidad." 
+          img="/nextjs.svg"></Skills>
+        </div>                   
+    </div>
+    <img
+      class="skills__container__siguiente-skills"
+      src="/proximo.png"
+      alt="siguiente"
+    />
+  </div>
+</div>
+
+<style>
+.skills__container__flechitas-skills {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills__container__anterior-skills {
+  height: 40px;
+  transform: rotate(180deg);
+  margin-left: 40px;
+}
+
+.skills__container__siguiente-skills {
+  height: 40px;
+  padding-right: 40px;
+}
+
+.skills__container__carrucel {
+  overflow: hidden;
+  height: 100%;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.skills__container__two-cards {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+</style>
+
+<script>
+function skills() {
+  let arraySkills = Array.from(
+    document.querySelectorAll(".skills__container__two-cards")
+  );
+
+  console.log(arraySkills);
+
+  let index = 0;
+  recorrerArray(arraySkills, index);
+
+  const anterior = document.querySelector(
+    ".skills__container__anterior-skills"
+  );
+  const siguiente = document.querySelector(
+    ".skills__container__siguiente-skills"
+  );
+
+  siguiente?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    index++;
+
+    if (index >= arraySkills.length) {
+      index = 0;
+      recorrerArray(arraySkills, index);
+    } else {
+      recorrerArray(arraySkills, index);
+    }
+  });
+
+  anterior?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    index--;
+
+    if (index < 0) {
+      index = arraySkills.length - 1;
+      recorrerArray(arraySkills, index);
+    } else {
+      recorrerArray(arraySkills, index);
+    }
+  });
+}
+
+function recorrerArray(arraySkills:any, index:number) {
+  arraySkills.forEach((skill:any, indice:number) => {
+    if (indice == index) {
+      skill.style.display = "flex";
+    } else {
+      skill.style.display = "none";
+    }
+  });
+}
+
+skills();
+
+</script>

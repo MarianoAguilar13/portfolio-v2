@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import AboutMe from '../components/AboutMe.astro'
+import CarruselSkills from '../components/CarruselSkills.astro';
+import CarruselSkillsMobile from '../components/CarruselSkillsMobile.astro';
+import CarruselProyects from '../components/CarruselProyects.astro';
+import Formulario from '../components/Formulario.astro';
+---
+
+<Layout title="Bienvenido al Portfolio de Mariano Aguilar">
+	<Hero></Hero>
+	<AboutMe></AboutMe>
+  <section id="projects" class="projects">
+    <div class="projects__container">
+      <h3 class="projects__container__title">Proyectos</h3>
+        <CarruselProyects></CarruselProyects>
+    </div>
+  </section>
+	<section id="skills" class="skills">
+		<div class="skills__container">
+			<h2 class="skills__container__title">Habilidades</h2>		
+			<CarruselSkills></CarruselSkills>
+		</div>
+    <CarruselSkillsMobile></CarruselSkillsMobile>
+  </section>
+  <section id="contacto" class="contacto">
+    <div class="contacto__container">
+      <h3 class="contacto__container__title">Contacto</h3>
+      <div class="contenedor-form">
+        <Formulario></Formulario>    
+      </div>
+    </div>
+  </section> 
+</Layout>
+
+
+<style>
+.skills {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--celesteClaro);
+}
+
+.skills__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--celesteClaro);
+}
+
+@media (max-width: 960px) {
+  .skills__container {
+    display: none;
+  }
+}
+
+.skills__container__title {
+  color: #0b0c10;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.projects {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--celesteClaro);
+}
+
+.projects__container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.projects__container__title {
+  height: 10%;
+  width: 100%;
+  color: var(--Negrito);
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .projects__container__title {
+    height: 5%;
+    font-size: 32px;
+  }
+}
+
+.contacto {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--gris);
+}
+
+.contacto__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--gris);
+}
+
+@media (max-width: 768px) {
+  .contacto__container {
+    justify-content: center;
+  }
+}
+
+.contacto__container__title {
+  color: whitesmoke;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.contenedor-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: white;
+  justify-content: start;
+  align-items: center;
+  align-self: center;
+  height: 90%;
+  width: 100%;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .contenedor-form {
+    margin-top: 60px;
+  }
+}
+
+</style>

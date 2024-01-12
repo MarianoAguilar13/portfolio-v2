@@ -1,0 +1,99 @@
+---
+  
+---
+
+<main class="hero-container">
+    <h1 class="hero-container__title">Portfolio Mariano Aguilar</h1>
+
+    <iframe
+        class="hero-container__video video-frame"
+        src="https://www.youtube.com/embed/eHoy_0R9s-Q?autoplay=1&mute=1&loop=1&controls=0&playlist=eHoy_0R9s-Q"
+        allowfullscreen
+    >
+    </iframe>
+
+ 
+   <!-----
+     <iframe
+    class="hero-container__video video-frame"
+    src="https://www.youtube.com/embed/eHoy_0R9s-Q?autoplay=1&mute=1&loop=1&controls=0&playlist=eHoy_0R9s-Q"
+    allowfullscreen
+  >
+  </iframe>
+
+
+     <lite-youtube
+    class="hero-container__video video-frame"
+    videoid="eHoy_0R9s-Q"
+    autoload
+    videoplay="play"
+    videoStartAt="0"
+    >
+    </lite-youtube>
+   --- -->
+  
+</main>
+
+
+<style>
+  .hero-container {
+    background-color: var(--Negrito);
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      height: calc(100vh - 120px);
+      width: 100%;
+    }
+  }
+  
+ 
+  .hero-container__video {
+    height: 75%;
+    width: 80%;    
+    border-radius: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-container__video {
+      width: 90vw;
+      height:40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+  
+  .hero-container__title {
+    font-size: 48px;
+    font-weight: 600;
+    font-style: italic;
+    color: whitesmoke;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-container__title {
+      font-size: 32px;
+      font-weight: 600;
+      font-style: italic;
+      color: whitesmoke;
+      margin-top: 60px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<script>
+    import '@justinribeiro/lite-youtube';
+</script>

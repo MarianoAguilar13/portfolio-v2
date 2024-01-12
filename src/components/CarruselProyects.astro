@@ -1,0 +1,177 @@
+---
+import Proyects from "./Proyects.astro"
+---
+
+
+<div class="projects__container__flechitas-carrusell">
+    <img
+        class="projects__container__anterior"
+        src="/proximo.png"
+        alt="siguiente"
+    />
+    <div class="projects__container__carrucel-container">
+        <Proyects title="E-commerce" 
+            urlVideo="https://www.youtube.com/embed/1wtC2u5doK0?loop=1&autoplay=1&mute=1&controls=0&playlist=1wtC2u5doK0" 
+            linkToPage="https://ecommerce-one-fawn.vercel.app" 
+            description="Es un e-commerce, creado con React, Node.js y Next.js, para probarla utilizar un mail válido, una cuenta de mercado pago con user test que utiliza dinero ficticio y pagar con tarjetas con dinero ficticio, estas se encuentran en la api de mercadopago.">
+        </Proyects>
+        <Proyects title="App mascotas perdidas" 
+            urlVideo="https://www.youtube.com/embed/qy7Bu0Hdzc8?autoplay=1&mute=1&loop=1&controls=0&playlist=qy7Bu0Hdzc8" 
+            linkToPage="https://app-pets-mariano.vercel.app" 
+            description="Es una app-web creada con React y Next.js en el front y con Node.js en el back, esta app nos permite subir nuestras mascotas perdidas mediando geolocalización, también permite observar las mascotas perdidas cerca tuyo y reportarlas.">
+        </Proyects>
+        <Proyects title="Registro de deuda de clientes" 
+            urlVideo="https://www.youtube.com/embed/iMFoLqNoL44?autoplay=1&mute=1&loop=1&controls=0&playlist=iMFoLqNoL44" 
+            linkToPage="https://registro-contable.onrender.com" 
+            description="Este es un proyecto Freelance que realice para un cliente, que necesitaba de manera local tener un programa que le permita almacenar las deudas de los clientes en una base de datos, para que pueda registrar los pago que iban realizando.">
+        </Proyects>
+        <Proyects title="Piedra, Papel o Tijeras Online" 
+            urlVideo="https://www.youtube.com/embed/6O6dPsu5Nxk?autoplay=1&mute=1&loop=1&controls=0&playlist=6O6dPsu5Nxk" 
+            linkToPage="https://piedra-papel-tijera-online-h78d.onrender.com" 
+            description="Este proyecto es una versión del piedra papel o tijeras, pero online, utilizando como base de datos Firebase, ya que esta nos provee de una bd no sql y una bd real time, necesaria para que los jugadores jueguen a tiempo real">
+        </Proyects>
+        <Proyects title="Piedra, Papel o Tijeras" 
+            urlVideo="https://www.youtube.com/embed/26XDNm-QO7s?autoplay=1&mute=1&loop=1&controls=0&playlist=26XDNm-QO7s" 
+            linkToPage="https://piedra-papel-tijera-losk.onrender.com" 
+            description="Es el juego tradicional de piedra, papel o tijera, podremos realizar las partidas que queramos enfrentándonos contra la computadora. Podremos ver el historial de victorias e incluso reiniciarlo para comenzar de nuevo.">
+        </Proyects>
+    </div>
+    <img
+        class="projects__container__siguiente"
+        src="/proximo.png"
+        alt="siguiente"
+    />
+</div>
+
+
+<style>
+.projects__container__flechitas-carrusell {
+  height: 92vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .projects__container__flechitas-carrusell {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.projects__container__anterior {
+  height: 40px;
+  transform: rotate(180deg);
+  margin-left: 20px;
+  margin-right: 40px;
+}
+@media (max-width: 960px) {
+  .projects__container__anterior {
+    height: 20px;
+    transform: rotate(180deg);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.projects__container__siguiente {
+  height: 40px;
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+@media (max-width: 960px) {
+  .projects__container__siguiente {
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+.projects__container__carrucel-container {
+  overflow: hidden;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 18px 2px rgba(7,71,71,1);
+  -moz-box-shadow: 0px 0px 18px 2px rgba(7,71,71,1);
+  box-shadow: 0px 0px 18px 2px rgba(7,71,71,1);
+}
+
+@media (max-width: 960px) {
+  .projects__container__carrucel-container {
+    height: 80%;
+    width: 90%;
+  }
+}
+</style>
+
+<script>
+function main() {
+  let arrayProjects = Array.from(
+    document.querySelectorAll(".card-project__container")
+  );
+
+  let index = 0;
+  recorrerArray(arrayProjects, index);
+
+  const anterior = document.querySelector(".projects__container__anterior");
+  const siguiente = document.querySelector(".projects__container__siguiente");
+
+  siguiente?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log("me hizo click el siguiente");
+
+    index++;
+
+    if (index >= arrayProjects.length) {
+      index = 0;
+      recorrerArray(arrayProjects, index);
+    } else {
+      recorrerArray(arrayProjects, index);
+    }
+  });
+
+  anterior?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log("me hizo click el anterior");
+
+    index--;
+
+    if (index < 0) {
+      index = arrayProjects.length - 1;
+      recorrerArray(arrayProjects, index);
+    } else {
+      recorrerArray(arrayProjects, index);
+    }
+  });
+}
+
+function recorrerArray(arrayProjects: any, index:number) {
+  arrayProjects.forEach((project:any, indice:number) => {
+    console.log("el num del array", indice);
+    if (indice == index) {
+      project.style.display = "flex";
+    } else {
+      project.style.display = "none";
+    }
+  });
+}
+
+main();
+
+
+</script>

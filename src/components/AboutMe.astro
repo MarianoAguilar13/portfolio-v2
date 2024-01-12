@@ -1,0 +1,195 @@
+<section id="sobre-mi" class="sobre-mi">
+    <div class="sobre-mi__container">
+      <div class="sobre-mi__container__title-container">
+        <h2 class="sobre-mi__container__title-container__title">Sobre mi</h2>
+      </div>
+      <div class="sobre-mi__container__info-container">
+        <div
+          class="sobre-mi__container__info-container__text-title-container"
+        >
+          <h3
+            class="sobre-mi__container__info-container__text-title-container__title"
+          >
+            ¿Quién soy?
+          </h3>
+          <p
+            class="sobre-mi__container__info-container__text-title-container__texto"
+          >
+            Hola, mi nombre es Mariano Aguilar, vivo en Baradero (Bs.
+            As.-Argentina). Soy Analista en informática, realicé la carrera de desarrollo
+            web Fullstack de Apx y me encuentro cursando cuarto año de licenciatura en informática en UNSADA. Me
+            encanta la programación y cada día quiero aprender más, para
+            mejorar mis habilidades y poder crear los proyectos que me
+            proponga.
+          </p>
+        </div>
+        <img
+          class="sobre-mi__container__info-container__mi-imagen"
+          src="/mariano-foto.jpg"
+          alt="Foto de Mariano"
+        />
+      </div>
+    </div>
+</section>
+
+
+<style>
+.sobre-mi {
+  height: 100vh;
+  background-color: var(--gris);
+}
+
+.sobre-mi__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container {
+    height: 100vh;
+    padding-top: 20px;
+    justify-content: start;
+  }
+}
+
+.sobre-mi__container__title-container {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__title-container {
+    height: 10%;
+  }
+}
+
+.sobre-mi__container__title-container__title {
+  font-size: 48px;
+  color: var(--celesteClaro);
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__title-container__title {
+    font-size: 32px;
+    margin: 0;
+    margin-top: 10px;
+  }
+}
+
+.sobre-mi__container__info-container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__info-container {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.sobre-mi__container__info-container__text-title-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__info-container__text-title-container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.sobre-mi__container__info-container__text-title-container__title {
+  font-size: 32px;
+  font-weight: bold;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  color: var(--celesteClaro);
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__info-container__text-title-container__title {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.sobre-mi__container__info-container__text-title-container__texto {
+  font-size: 24px;
+  height: 90%;
+  width: 100%;
+  font-weight: normal;
+  font-style: italic;
+  color: whitesmoke;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (max-width: 960px) {
+  .sobre-mi__container__info-container__text-title-container__texto {
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__info-container__text-title-container__texto {
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+  }
+}
+
+.sobre-mi__container__info-container__mi-imagen {
+  height: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .sobre-mi__container__info-container__mi-imagen {
+    height: 50%;
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+</style>

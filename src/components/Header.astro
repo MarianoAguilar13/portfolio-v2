@@ -1,0 +1,253 @@
+---
+
+---
+
+<header id="header" class="header">
+    <div class="header__visible">
+      <div class="header__visible__logo-container">
+        <img
+          class="header__visible__logo-container__logo"
+          src="/logo-mariano-dev-para-page.png"
+          alt="Logo Mariano Dev"
+        />
+      </div>
+      <div class="header__links">
+        <a href="#sobre-mi">
+          <button class="header__links__link">Sobre mí</button>
+        </a>
+        <a href="#skills">
+          <button class="header__links__link">
+            Habilidades
+          </button>
+        </a>
+        <a href="#projects">
+          <button class="header__links__link" >
+            Proyectos
+          </button>
+        </a>
+        <a href="#contacto">
+          <button class="header__links__link cerrar-sesion">
+            Contacto
+          </button>
+        </a>
+      </div>
+      <div class="header__visible__boton-desplegar-container">
+        <button class="header__visible__boton-desplegar">
+          <div class="header__visible__boton-desplegar__barras"></div>
+          <div class="header__visible__boton-desplegar__barras"></div>
+          <div class="header__visible__boton-desplegar__barras"></div>
+        </button>
+      </div>
+    </div>
+    <div class="ventana-links">
+      <button class="ventana-links__boton-cerrar">X</button>
+      <a class="ventana-links__link link-uno" href="#sobre-mi">Sobre mí</a>
+      <a class="ventana-links__link link-dos" href="#skills">Habilidades</a>
+      <a class="ventana-links__link link-tres" href="#projects">Proyectos</a>
+      <a
+        class="ventana-links__link link-cuatro cerrar-sesion-ventana"
+        href="#contacto"
+        >Contacto</a
+      >
+    </div>
+</header>
+
+<style>
+	.header__visible {
+  background-color: var(--celesteOscuro);
+  display: flex;
+  height: 120px;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  font-family: var(--poppins);
+ 
+}
+
+@media (max-width: 768px) {
+  .header__visible {
+  }
+}
+
+.header__visible__logo-container {
+  display: flex;
+  height: 100%;
+  width: 20%;
+  align-items: center;
+}
+
+.header__visible__logo-container__logo {
+  color: black;
+  height: 80%;
+  max-width: 100px;
+  margin-left: 40px;
+  src: url();
+}
+
+@media (max-width: 768px) {
+  .header__visible__logo-container__logo {
+    font-size: 24px;
+  }
+}
+
+.header__links {
+  display: flex;
+  height: 120px;
+  width: 80%;
+  text-decoration: none;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  margin-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .header__links {
+    display: none;
+  }
+}
+
+.header__links__link {
+  font-size: 18px;
+  text-decoration: none;
+  color: whitesmoke;
+  padding-left:15px;
+  padding-right:15px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--gris);
+}
+
+@media (max-width: 768px) {
+  .header__links__link {
+    display: none;
+  }
+}
+
+.header__visible__boton-desplegar-container {
+  display: flex;
+  height: 120px;
+  width: 50%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+@media (min-width: 769px) {
+  .header__visible__boton-desplegar-container {
+    display: none;
+  }
+}
+
+.header__visible__boton-desplegar {
+  background-color: var(--Negrito);
+  padding: 0;
+}
+
+@media (min-width: 769px) {
+  .header__visible__boton-desplegar {
+    display: none;
+  }
+}
+
+.header__visible__boton-desplegar__barras {
+  background-color: var(--Negrito);
+  border: solid 1px var(--celesteClaro);
+  width: 36px;
+  height: 8px;
+}
+
+.ventana-links {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--Negrito);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .ventana-links {
+    display: none;
+  }
+}
+
+.ventana-links__boton-cerrar {
+  position: absolute;
+  right: 0px;
+  color: var(--celesteClaro);
+  background-color: var(--Negrito);
+  border: solid 2px var(--celesteClaro);
+  text-align: center;
+  padding-left:20px;
+  padding-right:20px ;
+  font-size: 48px;
+}
+
+@media (min-width: 769px) {
+  .ventana-links__boton-cerrar {
+    position: absolute;
+    display: none;
+  }
+}
+
+.ventana-links__link {
+  font-size: 32px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.link-uno {
+  text-decoration: none;
+  margin-top: 100px;
+}
+
+.link-dos {
+  text-decoration: none;
+}
+
+.link-tres {
+  text-decoration: none;
+}
+
+.link-cuatro {
+  text-decoration: none;
+  margin-bottom: 100px;
+}
+</style>
+
+<script>
+   function main() {
+  const botonAbreMenuEl = document.querySelector(
+    ".header__visible__boton-desplegar"
+  );
+  const botonCerrarMenuEl = document.querySelector(
+    ".ventana-links__boton-cerrar"
+  );
+  const menuEl = document.querySelector(".ventana-links") as any;
+
+  const links = document.querySelectorAll(".ventana-links__link");
+
+  botonAbreMenuEl?.addEventListener("click", () => {
+    menuEl.style.display = "flex";
+  });
+
+  botonCerrarMenuEl?.addEventListener("click", () => {
+    menuEl.style.display = "";
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      menuEl.style.display = "";
+    });
+  });
+}
+
+main();
+</script>

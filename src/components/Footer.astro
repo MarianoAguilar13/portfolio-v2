@@ -1,0 +1,140 @@
+<div class="footer">
+    <img
+      class="footer__logo"
+      src="/logo-mariano-dev-fondo-negro.png"
+      alt="Logo Mariano dev"
+    />
+    <div class="footer__links">
+      <div class="footer__links__container">
+        <img
+          class="footer__links__container__logo"
+          src="/cv.png"
+          alt="Instagram"
+        />
+        <a
+          class="footer__links__container__link"
+          href="https://docs.google.com/document/d/1Sg9P67FBPSzLw89C9xD2fKA2Azhzk8ei2PJTPCE8F-0/edit#heading=h.5x0d5h95i329"
+          target="_blank"
+          >CV</a
+        >
+      </div>
+      <div class="footer__links__container">
+        <img
+          class="footer__links__container__logo"
+          src="/linkedin.png"
+          alt="Linkedin"
+        />
+        <a
+          class="footer__links__container__link"
+          href="https://www.linkedin.com/in/mariano-aguilar-a024b1240/"
+          target="_blank"
+          >Linkedin</a
+        >
+      </div>
+      <div class="footer__links__container">
+        <img
+          class="footer__links__container__logo"
+          src="/github.png"
+          alt="Github"
+        />
+        <a
+          class="footer__links__container__link"
+          href="https://github.com/MarianoAguilar13"
+          target="_blank"
+          >Github</a
+        >
+      </div>
+    </div>
+</div>
+
+<style>
+.footer {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: var(--Negrito);
+}
+
+@media (min-width: 769px) {
+  .footer {
+    display: flex;
+    height: 400px;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 350px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--Negrito);
+  }
+}
+
+.footer__logo {
+  height: 200px;
+  width: 144px;
+}
+
+@media (min-width: 769px) {
+  .footer__logo {
+    margin-left: 80px;
+  }
+}
+
+.footer__links {
+  display: flex;
+  height: 70%;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
+    width: 300px;
+    margin-right: 40px;
+  }
+}
+
+.footer__links__container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 769px) {
+  .footer__links__container {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    margin: 10px 0;
+  }
+}
+
+.footer__links__container__link {
+  text-decoration: none;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 36px;
+}
+
+.footer__links__container__logo {
+  width: 42px;
+  height: 42px;
+  margin-right: 20px;
+}
+
+
+</style>
